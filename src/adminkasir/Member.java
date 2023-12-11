@@ -26,21 +26,13 @@ public class Member extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Logout = new javax.swing.JButton();
         Market = new javax.swing.JButton();
         Product = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        Member = new javax.swing.JButton();
+        Logout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(900, 450));
-
-        Logout.setText("LogOut");
-        Logout.setPreferredSize(new java.awt.Dimension(100, 50));
-        Logout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LogoutActionPerformed(evt);
-            }
-        });
 
         Market.setText("Market");
         Market.setPreferredSize(new java.awt.Dimension(100, 100));
@@ -60,8 +52,16 @@ public class Member extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setText("Member");
-        jButton4.setPreferredSize(new java.awt.Dimension(100, 50));
+        Member.setText("Member");
+        Member.setPreferredSize(new java.awt.Dimension(100, 50));
+
+        Logout.setText("Logout");
+        Logout.setPreferredSize(new java.awt.Dimension(100, 50));
+        Logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogoutActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -74,7 +74,7 @@ public class Member extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(Product, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(Member, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(794, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -85,7 +85,7 @@ public class Member extends javax.swing.JFrame {
                 .addGap(42, 42, 42)
                 .addComponent(Product, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Member, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(Logout, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42))
@@ -144,7 +144,7 @@ public class Member extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Logout;
     private javax.swing.JButton Market;
+    private javax.swing.JButton Member;
     private javax.swing.JButton Product;
-    private javax.swing.JButton jButton4;
     // End of variables declaration//GEN-END:variables
 }
