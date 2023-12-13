@@ -118,33 +118,25 @@ public class login extends javax.swing.JFrame {
     String name = inputUsername.getText();
     String pass = inputPassword.getText();
 
-    // Database connection parameters
-    String url = "jdbc:mysql://localhost:3306/databasekasir";
-    String username = "root";
-    String password = "";
+    try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/databasekasir", "root", "")) {
+        // Create a prepared statement
+        String query = "SELECT * FROM admin WHERE username = ? AND password = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setString(1, name);
+            preparedStatement.setString(2, pass);
 
-    try {
-        Connection connection = DriverManager.getConnection(url, username, password);
-        String sql = "INSERT INTO admin (username, password) VALUES (?, ?)";
-        PreparedStatement preparedStatement = connection.prepareStatement(sql);
-
-        preparedStatement.setString(1, name);
-        preparedStatement.setString(2, pass);
-
-        int rowsAffected = preparedStatement.executeUpdate();
-
-        if (rowsAffected > 0) {
-            JOptionPane.showMessageDialog(this, "Buku berhasil ditambahkan ke database");
-        } else {
-            JOptionPane.showMessageDialog(this, "Gagal menambahkan buku ke database");
+            // Execute the query
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                // Check if a matching user and password were found
+                if (resultSet.next()) {
+                    System.out.println("BERHASIL BANG");
+                } else {
+                    System.out.println("GAGAL BANG");
+                }
+            }
         }
-
-        preparedStatement.close();
-        connection.close();
-
-    } catch (Exception e) {
-        e.printStackTrace();
-        JOptionPane.showMessageDialog(this, "Terjadi kesalahan dalam koneksi database");
+    } catch (SQLException e) {
+        System.out.println("Error: " + e.getMessage());
     }
     }//GEN-LAST:event_tombolLoginActionPerformed
 
