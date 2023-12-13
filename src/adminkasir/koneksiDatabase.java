@@ -11,7 +11,7 @@ import java.sql.*;
  * @author User
  */
 public class koneksiDatabase {
-     private static koneksiDatabase instance;
+    private static koneksiDatabase instance;
     private Connection koneksi;
    
     private koneksiDatabase(){
@@ -34,6 +34,14 @@ public class koneksiDatabase {
     }
     
     public Connection getConnection(){
-        return koneksi;
+        try {
+            if (koneksi == null || koneksi.isClosed()) {
+                // Reconnect if connection is null or closed
+                instance = new koneksiDatabase();
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return instance.koneksi;
     }
 }
