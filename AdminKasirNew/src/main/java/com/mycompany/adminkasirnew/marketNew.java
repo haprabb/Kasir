@@ -284,7 +284,7 @@ public class marketNew extends javax.swing.JFrame {
 
         pnlCards.add(pnlCard1, "pnlCard1");
 
-        pnlCard2.setBackground(new java.awt.Color(34, 40, 44));
+        pnlCard2.setBackground(new java.awt.Color(0, 56, 68));
 
         javax.swing.GroupLayout pnlCard2Layout = new javax.swing.GroupLayout(pnlCard2);
         pnlCard2.setLayout(pnlCard2Layout);
