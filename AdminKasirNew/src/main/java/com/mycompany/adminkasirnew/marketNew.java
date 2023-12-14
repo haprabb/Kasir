@@ -3,7 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.adminkasirnew;
-
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JButton;
+import javax.swing.plaf.basic.BasicButtonUI;
 /**
  *
  * @author tbhan
@@ -13,10 +16,12 @@ public class marketNew extends javax.swing.JFrame {
     /**
      * Creates new form marketNew
      */
+    CardLayout cardLayout;
     public marketNew() {
         initComponents();
+        
+        cardLayout = (CardLayout)(pnlCards.getLayout());
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,7 +32,7 @@ public class marketNew extends javax.swing.JFrame {
     private void initComponents() {
 
         jSplitPane1 = new javax.swing.JSplitPane();
-        jPanel2 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         Logout = new javax.swing.JButton();
         Product = new javax.swing.JButton();
         Member = new javax.swing.JButton();
@@ -42,7 +47,7 @@ public class marketNew extends javax.swing.JFrame {
         jSplitPane1.setDividerLocation(300);
         jSplitPane1.setPreferredSize(new java.awt.Dimension(450, 450));
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
         Logout.setText("Logout");
         Logout.setPreferredSize(new java.awt.Dimension(100, 50));
@@ -78,22 +83,22 @@ public class marketNew extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(102, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(100, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Market, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Logout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Member, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Product, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(98, 98, 98))
+                .addGap(100, 100, 100))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(Market, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
@@ -105,9 +110,11 @@ public class marketNew extends javax.swing.JFrame {
                 .addGap(42, 42, 42))
         );
 
-        jSplitPane1.setLeftComponent(jPanel2);
+        jSplitPane1.setLeftComponent(jPanel1);
 
         pnlCards.setLayout(new java.awt.CardLayout());
+
+        pnlCard1.setBackground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout pnlCard1Layout = new javax.swing.GroupLayout(pnlCard1);
         pnlCard1.setLayout(pnlCard1Layout);
@@ -120,7 +127,9 @@ public class marketNew extends javax.swing.JFrame {
             .addGap(0, 450, Short.MAX_VALUE)
         );
 
-        pnlCards.add(pnlCard1, "card2");
+        pnlCards.add(pnlCard1, "pnlCard1");
+
+        pnlCard2.setBackground(new java.awt.Color(102, 255, 102));
 
         javax.swing.GroupLayout pnlCard2Layout = new javax.swing.GroupLayout(pnlCard2);
         pnlCard2.setLayout(pnlCard2Layout);
@@ -133,7 +142,9 @@ public class marketNew extends javax.swing.JFrame {
             .addGap(0, 450, Short.MAX_VALUE)
         );
 
-        pnlCards.add(pnlCard2, "card3");
+        pnlCards.add(pnlCard2, "pnlCard2");
+
+        pnlCard3.setBackground(new java.awt.Color(51, 51, 255));
 
         javax.swing.GroupLayout pnlCard3Layout = new javax.swing.GroupLayout(pnlCard3);
         pnlCard3.setLayout(pnlCard3Layout);
@@ -146,7 +157,7 @@ public class marketNew extends javax.swing.JFrame {
             .addGap(0, 450, Short.MAX_VALUE)
         );
 
-        pnlCards.add(pnlCard3, "card4");
+        pnlCards.add(pnlCard3, "pnlCard3");
 
         jSplitPane1.setRightComponent(pnlCards);
 
@@ -167,11 +178,11 @@ public class marketNew extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void MarketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MarketActionPerformed
-        // TODO add your handling code here:
+        cardLayout.show(pnlCards, "pnlCard1");
     }//GEN-LAST:event_MarketActionPerformed
 
     private void ProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductActionPerformed
-        // TODO add your handling code here:
+        cardLayout.show(pnlCards, "pnlCard2");
     }//GEN-LAST:event_ProductActionPerformed
 
     private void LogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutActionPerformed
@@ -179,7 +190,7 @@ public class marketNew extends javax.swing.JFrame {
     }//GEN-LAST:event_LogoutActionPerformed
 
     private void MemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MemberActionPerformed
-        // TODO add your handling code here:
+        cardLayout.show(pnlCards, "pnlCard3");
     }//GEN-LAST:event_MemberActionPerformed
 
     /**
@@ -222,7 +233,7 @@ public class marketNew extends javax.swing.JFrame {
     private javax.swing.JButton Market;
     private javax.swing.JButton Member;
     private javax.swing.JButton Product;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JPanel pnlCard1;
     private javax.swing.JPanel pnlCard2;
