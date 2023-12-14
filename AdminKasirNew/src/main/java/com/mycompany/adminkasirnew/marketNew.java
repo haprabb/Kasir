@@ -70,7 +70,6 @@ public class marketNew extends javax.swing.JFrame {
         tmblTambah = new javax.swing.JButton();
         tmblTampil = new javax.swing.JButton();
         tmblHapus = new javax.swing.JButton();
-        tmblKeluar = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblMember = new javax.swing.JTable();
 
@@ -253,7 +252,7 @@ public class marketNew extends javax.swing.JFrame {
                 .addGroup(pnlCard1Layout.createSequentialGroup()
                     .addGap(76, 76, 76)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(465, Short.MAX_VALUE)))
+                    .addContainerGap(497, Short.MAX_VALUE)))
         );
         pnlCard1Layout.setVerticalGroup(
             pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -278,7 +277,7 @@ public class marketNew extends javax.swing.JFrame {
                 .addGap(60, 60, 60))
             .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCard1Layout.createSequentialGroup()
-                    .addContainerGap(337, Short.MAX_VALUE)
+                    .addContainerGap(339, Short.MAX_VALUE)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(60, 60, 60)))
         );
@@ -291,7 +290,7 @@ public class marketNew extends javax.swing.JFrame {
         pnlCard2.setLayout(pnlCard2Layout);
         pnlCard2Layout.setHorizontalGroup(
             pnlCard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 776, Short.MAX_VALUE)
+            .addGap(0, 808, Short.MAX_VALUE)
         );
         pnlCard2Layout.setVerticalGroup(
             pnlCard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -300,7 +299,7 @@ public class marketNew extends javax.swing.JFrame {
 
         pnlCards.add(pnlCard2, "pnlCard2");
 
-        pnlCard3.setBackground(new java.awt.Color(34, 40, 44));
+        pnlCard3.setBackground(new java.awt.Color(0, 56, 68));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -322,28 +321,35 @@ public class marketNew extends javax.swing.JFrame {
             }
         });
 
+        tmblTambah.setBackground(new java.awt.Color(0, 108, 103));
+        tmblTambah.setForeground(new java.awt.Color(242, 242, 242));
         tmblTambah.setText("Tambah");
+        tmblTambah.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tmblTambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tmblTambahActionPerformed(evt);
             }
         });
 
+        tmblTampil.setBackground(new java.awt.Color(0, 108, 103));
+        tmblTampil.setForeground(new java.awt.Color(242, 242, 242));
         tmblTampil.setText("Tampil");
+        tmblTampil.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tmblTampil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tmblTampilActionPerformed(evt);
             }
         });
 
+        tmblHapus.setBackground(new java.awt.Color(0, 108, 103));
+        tmblHapus.setForeground(new java.awt.Color(242, 242, 242));
         tmblHapus.setText("Hapus");
+        tmblHapus.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tmblHapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tmblHapusActionPerformed(evt);
             }
         });
-
-        tmblKeluar.setText("Keluar");
 
         tblMember.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -371,30 +377,27 @@ public class marketNew extends javax.swing.JFrame {
         pnlCard3Layout.setHorizontalGroup(
             pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCard3Layout.createSequentialGroup()
-                .addGroup(pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(pnlCard3Layout.createSequentialGroup()
-                            .addGap(185, 185, 185)
-                            .addComponent(tmblTampil)
-                            .addGap(78, 78, 78)
-                            .addComponent(tmblHapus)
-                            .addGap(69, 69, 69)
-                            .addComponent(tmblKeluar))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlCard3Layout.createSequentialGroup()
-                            .addGap(44, 44, 44)
-                            .addGroup(pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(tmblTambah)
-                                .addGroup(pnlCard3Layout.createSequentialGroup()
-                                    .addGroup(pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(inputUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(inputNoTelp, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGap(0, 0, Short.MAX_VALUE))))
-                .addContainerGap(163, Short.MAX_VALUE))
+                .addGap(123, 123, 123)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(pnlCard3Layout.createSequentialGroup()
+                .addGap(214, 214, 214)
+                .addComponent(tmblTampil, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68)
+                .addComponent(tmblTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69)
+                .addComponent(tmblHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCard3Layout.createSequentialGroup()
+                .addGap(81, 81, 81)
+                .addGroup(pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                .addGroup(pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(inputUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputNoTelp, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(136, 136, 136))
         );
         pnlCard3Layout.setVerticalGroup(
             pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -411,11 +414,10 @@ public class marketNew extends javax.swing.JFrame {
                 .addGroup(pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tmblTampil)
                     .addComponent(tmblHapus)
-                    .addComponent(tmblTambah)
-                    .addComponent(tmblKeluar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                    .addComponent(tmblTambah))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pnlCards.add(pnlCard3, "pnlCard3");
@@ -426,7 +428,7 @@ public class marketNew extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 911, Short.MAX_VALUE)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 925, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -463,28 +465,30 @@ public class marketNew extends javax.swing.JFrame {
     }//GEN-LAST:event_inputUsernameActionPerformed
 
     private void tmblTampilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tmblTampilActionPerformed
-    try(
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/databasekasir", "root", "")){
+    try (
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/databasekasir", "root", "")) {
         Statement st = connection.createStatement();
         String query = "SELECT * FROM member";
-        
-        
-        
+
         PreparedStatement pst = connection.prepareStatement(query);
         ResultSet rs = pst.executeQuery(query);
-        DefaultTableModel model = (DefaultTableModel)tblMember.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblMember.getModel();
         model.setRowCount(0);
-        while(rs.next()){
-            model.addRow(new String[]{rs.getString(1), rs.getString(2), rs.getString(3)});
+        while (rs.next()) {
+            // Retrieve the first column as int (assuming it's an integer column)
+            int id = rs.getInt(1);
             
+            // Retrieve other columns as strings
+            String column2 = rs.getString(2);
+            String column3 = rs.getString(3);
+
+            // Add the row to the table model
+            model.addRow(new Object[]{id, column2, column3});
         }
-        
-            
-           
-            
-    }   catch (SQLException ex) {
-            Logger.getLogger(marketNew.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
+    } catch (SQLException ex) {
+        Logger.getLogger(marketNew.class.getName()).log(Level.SEVERE, null, ex);
+    }
     }//GEN-LAST:event_tmblTampilActionPerformed
 
     private void tmblTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tmblTambahActionPerformed
@@ -527,23 +531,56 @@ public class marketNew extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void tmblHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tmblHapusActionPerformed
-      int row = tblMember.getSelectedRow();
-      String cell = tblMember.getModel().getValueAt(row, 0).toString();
-      String query = "DELETE FROM member where Id = " + cell;
-     try(
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/databasekasir", "root", "")){
-        Statement st = connection.createStatement();
-        PreparedStatement pst = connection.prepareStatement(query);
-        ResultSet rs = pst.executeQuery(query);
-        JOptionPane.showMessageDialog(null, "Data Berhasil dihapus");
-        
-        
-        
-    } catch (SQLException ex) {
-            Logger.getLogger(marketNew.class.getName()).log(Level.SEVERE, null, ex);
-        
-     }
-     
+      int selectedRowIndex = tblMember.getSelectedRow();
+
+    // Check if a row is selected
+    if (selectedRowIndex != -1) {
+        // Assuming the first column is the ID column
+        Object idObject = tblMember.getValueAt(selectedRowIndex, 0);
+
+        // Check if the ID is not null
+        if (idObject != null) {
+            // Convert the ID to the appropriate type (e.g., Integer)
+            if (idObject instanceof Integer) {
+                int memberId = (Integer) idObject;
+
+                // Now, you can use JDBC to delete the record from the database
+                deleteMemberFromDatabase(memberId);
+
+            } else {
+                // Handle type mismatch
+                System.out.println("Invalid ID type (not an Integer)");
+            }
+        } else {
+            // Handle null ID
+            System.out.println("ID is null");
+        }
+    } else {
+        // Inform the user that no row is selected
+        System.out.println("Please select a row to delete");
+    }
+}
+    private void deleteMemberFromDatabase(int memberId) {
+    try {
+        // Establish a connection to the database
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/databasekasir", "root", "");
+
+        // Create a SQL statement
+        Statement statement = connection.createStatement();
+
+        // Execute the delete query
+        String deleteQuery = "DELETE FROM member WHERE id = " + memberId;
+        statement.executeUpdate(deleteQuery);
+
+        // Close the resources
+        statement.close();
+        connection.close();
+
+        System.out.println("Member deleted successfully");
+    } catch (SQLException e) {
+        e.printStackTrace();
+        System.out.println("Error deleting member from the database");
+    }
     }//GEN-LAST:event_tmblHapusActionPerformed
 
     /**
@@ -608,7 +645,6 @@ public class marketNew extends javax.swing.JFrame {
     private javax.swing.JPanel pnlCards;
     private javax.swing.JTable tblMember;
     private javax.swing.JButton tmblHapus;
-    private javax.swing.JButton tmblKeluar;
     private javax.swing.JButton tmblTambah;
     private javax.swing.JButton tmblTampil;
     // End of variables declaration//GEN-END:variables
