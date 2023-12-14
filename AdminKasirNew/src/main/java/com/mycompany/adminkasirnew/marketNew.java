@@ -32,7 +32,10 @@ public class marketNew extends javax.swing.JFrame {
         Product = new javax.swing.JButton();
         Member = new javax.swing.JButton();
         Market = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        pnlCards = new javax.swing.JPanel();
+        pnlCard1 = new javax.swing.JPanel();
+        pnlCard2 = new javax.swing.JPanel();
+        pnlCard3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,18 +107,48 @@ public class marketNew extends javax.swing.JFrame {
 
         jSplitPane1.setLeftComponent(jPanel2);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        pnlCards.setLayout(new java.awt.CardLayout());
+
+        javax.swing.GroupLayout pnlCard1Layout = new javax.swing.GroupLayout(pnlCard1);
+        pnlCard1.setLayout(pnlCard1Layout);
+        pnlCard1Layout.setHorizontalGroup(
+            pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 595, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        pnlCard1Layout.setVerticalGroup(
+            pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 450, Short.MAX_VALUE)
         );
 
-        jSplitPane1.setRightComponent(jPanel3);
+        pnlCards.add(pnlCard1, "card2");
+
+        javax.swing.GroupLayout pnlCard2Layout = new javax.swing.GroupLayout(pnlCard2);
+        pnlCard2.setLayout(pnlCard2Layout);
+        pnlCard2Layout.setHorizontalGroup(
+            pnlCard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 595, Short.MAX_VALUE)
+        );
+        pnlCard2Layout.setVerticalGroup(
+            pnlCard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 450, Short.MAX_VALUE)
+        );
+
+        pnlCards.add(pnlCard2, "card3");
+
+        javax.swing.GroupLayout pnlCard3Layout = new javax.swing.GroupLayout(pnlCard3);
+        pnlCard3.setLayout(pnlCard3Layout);
+        pnlCard3Layout.setHorizontalGroup(
+            pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 595, Short.MAX_VALUE)
+        );
+        pnlCard3Layout.setVerticalGroup(
+            pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 450, Short.MAX_VALUE)
+        );
+
+        pnlCards.add(pnlCard3, "card4");
+
+        jSplitPane1.setRightComponent(pnlCards);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -142,7 +175,7 @@ public class marketNew extends javax.swing.JFrame {
     }//GEN-LAST:event_ProductActionPerformed
 
     private void LogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_LogoutActionPerformed
 
     private void MemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MemberActionPerformed
@@ -190,7 +223,10 @@ public class marketNew extends javax.swing.JFrame {
     private javax.swing.JButton Member;
     private javax.swing.JButton Product;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JPanel pnlCard1;
+    private javax.swing.JPanel pnlCard2;
+    private javax.swing.JPanel pnlCard3;
+    private javax.swing.JPanel pnlCards;
     // End of variables declaration//GEN-END:variables
 }
