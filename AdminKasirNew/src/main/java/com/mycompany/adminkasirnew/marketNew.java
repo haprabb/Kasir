@@ -38,9 +38,28 @@ public class marketNew extends javax.swing.JFrame {
         Member = new javax.swing.JButton();
         Market = new javax.swing.JButton();
         pnlCards = new javax.swing.JPanel();
-        pnlCard1 = new javax.swing.JPanel();
-        pnlCard2 = new javax.swing.JPanel();
-        pnlCard3 = new javax.swing.JPanel();
+        cardMarket = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        cardProduct = new javax.swing.JPanel();
+        cardMember = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        inputNoTelp = new javax.swing.JTextField();
+        inputUsername = new javax.swing.JTextField();
+        tmblTambah = new javax.swing.JButton();
+        tmblTampil = new javax.swing.JButton();
+        tmblHapus = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        tmblKeluar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -87,14 +106,14 @@ public class marketNew extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(100, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(51, 51, 51)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Market, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Logout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Member, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Product, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(100, 100, 100))
+                    .addComponent(Product, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Market, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,7 +124,7 @@ public class marketNew extends javax.swing.JFrame {
                 .addComponent(Product, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(Member, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addComponent(Logout, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42))
         );
@@ -114,50 +133,225 @@ public class marketNew extends javax.swing.JFrame {
 
         pnlCards.setLayout(new java.awt.CardLayout());
 
-        pnlCard1.setBackground(new java.awt.Color(255, 51, 51));
+        cardMarket.setBackground(new java.awt.Color(255, 51, 51));
 
-        javax.swing.GroupLayout pnlCard1Layout = new javax.swing.GroupLayout(pnlCard1);
-        pnlCard1.setLayout(pnlCard1Layout);
-        pnlCard1Layout.setHorizontalGroup(
-            pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 595, Short.MAX_VALUE)
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Id Barang", "Nama barang", "Jumlah", "Harga"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
+
+        jButton1.setText("jButton1");
+
+        jButton2.setText("jButton1");
+
+        jButton3.setText("jButton1");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Barang");
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Jumlah");
+
+        javax.swing.GroupLayout cardMarketLayout = new javax.swing.GroupLayout(cardMarket);
+        cardMarket.setLayout(cardMarketLayout);
+        cardMarketLayout.setHorizontalGroup(
+            cardMarketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardMarketLayout.createSequentialGroup()
+                .addGroup(cardMarketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cardMarketLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(cardMarketLayout.createSequentialGroup()
+                        .addGap(145, 145, 145)
+                        .addComponent(jLabel3)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addGroup(cardMarketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardMarketLayout.createSequentialGroup()
+                        .addGroup(cardMarketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton2)
+                            .addComponent(jButton3)
+                            .addComponent(jButton1))
+                        .addGap(57, 57, 57))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardMarketLayout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(164, 164, 164))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardMarketLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(100, 100, 100))
+            .addGroup(cardMarketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(cardMarketLayout.createSequentialGroup()
+                    .addGap(76, 76, 76)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(451, Short.MAX_VALUE)))
         );
-        pnlCard1Layout.setVerticalGroup(
-            pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        cardMarketLayout.setVerticalGroup(
+            cardMarketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardMarketLayout.createSequentialGroup()
+                .addGroup(cardMarketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(cardMarketLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jButton2)
+                        .addGap(74, 74, 74)
+                        .addComponent(jButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1))
+                    .addGroup(cardMarketLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 44, Short.MAX_VALUE)
+                .addGroup(cardMarketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE))
+                .addGap(18, 19, Short.MAX_VALUE)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60))
+            .addGroup(cardMarketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardMarketLayout.createSequentialGroup()
+                    .addContainerGap(339, Short.MAX_VALUE)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(60, 60, 60)))
+        );
+
+        pnlCards.add(cardMarket, "cardMarket");
+
+        cardProduct.setBackground(new java.awt.Color(102, 255, 102));
+
+        javax.swing.GroupLayout cardProductLayout = new javax.swing.GroupLayout(cardProduct);
+        cardProduct.setLayout(cardProductLayout);
+        cardProductLayout.setHorizontalGroup(
+            cardProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 762, Short.MAX_VALUE)
+        );
+        cardProductLayout.setVerticalGroup(
+            cardProductLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 450, Short.MAX_VALUE)
         );
 
-        pnlCards.add(pnlCard1, "pnlCard1");
+        pnlCards.add(cardProduct, "pnlCard2");
 
-        pnlCard2.setBackground(new java.awt.Color(102, 255, 102));
+        cardMember.setBackground(new java.awt.Color(51, 51, 255));
 
-        javax.swing.GroupLayout pnlCard2Layout = new javax.swing.GroupLayout(pnlCard2);
-        pnlCard2.setLayout(pnlCard2Layout);
-        pnlCard2Layout.setHorizontalGroup(
-            pnlCard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 595, Short.MAX_VALUE)
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("No. Telpon");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("USERNAME");
+
+        inputNoTelp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputNoTelpActionPerformed(evt);
+            }
+        });
+
+        inputUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputUsernameActionPerformed(evt);
+            }
+        });
+
+        tmblTambah.setText("Tambah");
+        tmblTambah.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tmblTambahActionPerformed(evt);
+            }
+        });
+
+        tmblTampil.setText("Tampil");
+        tmblTampil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tmblTampilActionPerformed(evt);
+            }
+        });
+
+        tmblHapus.setText("Hapus");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "ID", "Username", "Nomer Telpon"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        tmblKeluar.setText("Keluar");
+
+        javax.swing.GroupLayout cardMemberLayout = new javax.swing.GroupLayout(cardMember);
+        cardMember.setLayout(cardMemberLayout);
+        cardMemberLayout.setHorizontalGroup(
+            cardMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardMemberLayout.createSequentialGroup()
+                .addGroup(cardMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(cardMemberLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addGroup(cardMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(inputNoTelp, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(cardMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(cardMemberLayout.createSequentialGroup()
+                            .addGap(63, 63, 63)
+                            .addComponent(tmblTambah)
+                            .addGap(92, 92, 92)
+                            .addComponent(tmblTampil)
+                            .addGap(117, 117, 117)
+                            .addComponent(tmblHapus)
+                            .addGap(100, 100, 100)
+                            .addComponent(tmblKeluar))
+                        .addGroup(cardMemberLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 742, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(14, Short.MAX_VALUE))
+            .addGroup(cardMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardMemberLayout.createSequentialGroup()
+                    .addContainerGap(431, Short.MAX_VALUE)
+                    .addComponent(inputUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(17, 17, 17)))
         );
-        pnlCard2Layout.setVerticalGroup(
-            pnlCard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 450, Short.MAX_VALUE)
+        cardMemberLayout.setVerticalGroup(
+            cardMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardMemberLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(cardMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputNoTelp, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(cardMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tmblTampil)
+                    .addComponent(tmblHapus)
+                    .addComponent(tmblTambah)
+                    .addComponent(tmblKeluar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
+            .addGroup(cardMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(cardMemberLayout.createSequentialGroup()
+                    .addGap(48, 48, 48)
+                    .addComponent(inputUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(369, Short.MAX_VALUE)))
         );
 
-        pnlCards.add(pnlCard2, "pnlCard2");
-
-        pnlCard3.setBackground(new java.awt.Color(51, 51, 255));
-
-        javax.swing.GroupLayout pnlCard3Layout = new javax.swing.GroupLayout(pnlCard3);
-        pnlCard3.setLayout(pnlCard3Layout);
-        pnlCard3Layout.setHorizontalGroup(
-            pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 595, Short.MAX_VALUE)
-        );
-        pnlCard3Layout.setVerticalGroup(
-            pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 450, Short.MAX_VALUE)
-        );
-
-        pnlCards.add(pnlCard3, "pnlCard3");
+        pnlCards.add(cardMember, "pnlCard3");
 
         jSplitPane1.setRightComponent(pnlCards);
 
@@ -165,7 +359,7 @@ public class marketNew extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 973, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,6 +386,22 @@ public class marketNew extends javax.swing.JFrame {
     private void MemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MemberActionPerformed
         cardLayout.show(pnlCards, "pnlCard3");
     }//GEN-LAST:event_MemberActionPerformed
+
+    private void inputNoTelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNoTelpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputNoTelpActionPerformed
+
+    private void inputUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputUsernameActionPerformed
+
+    private void tmblTampilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tmblTampilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tmblTampilActionPerformed
+
+    private void tmblTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tmblTambahActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tmblTambahActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,11 +443,30 @@ public class marketNew extends javax.swing.JFrame {
     private javax.swing.JButton Market;
     private javax.swing.JButton Member;
     private javax.swing.JButton Product;
+    private javax.swing.JPanel cardMarket;
+    private javax.swing.JPanel cardMember;
+    private javax.swing.JPanel cardProduct;
+    private javax.swing.JTextField inputNoTelp;
+    private javax.swing.JTextField inputUsername;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JPanel pnlCard1;
-    private javax.swing.JPanel pnlCard2;
-    private javax.swing.JPanel pnlCard3;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     private javax.swing.JPanel pnlCards;
+    private javax.swing.JButton tmblHapus;
+    private javax.swing.JButton tmblKeluar;
+    private javax.swing.JButton tmblTambah;
+    private javax.swing.JButton tmblTampil;
     // End of variables declaration//GEN-END:variables
 }
