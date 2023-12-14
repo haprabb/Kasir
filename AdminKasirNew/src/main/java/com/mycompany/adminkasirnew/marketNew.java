@@ -5,14 +5,26 @@
 package com.mycompany.adminkasirnew;
 import java.awt.CardLayout;
 import java.awt.Component;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicButtonUI;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author tbhan
  */
 public class marketNew extends javax.swing.JFrame {
-
+       Statement stat;
+       ResultSet res;
+       String nama,nim;
     /**
      * Creates new form marketNew
      */
@@ -393,11 +405,57 @@ public class marketNew extends javax.swing.JFrame {
     }//GEN-LAST:event_inputUsernameActionPerformed
 
     private void tmblTampilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tmblTampilActionPerformed
-        // TODO add your handling code here:
+    try(Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/databasekasir", "root", "")){
+        Statement st = connection.createStatement();
+        String query = "SELECT * FROM member";
+        ResultSet rs = st.executeQuery(query);
+            
+            while (rs.next()){
+                String id = String.valueOf(rs.getInt("id"));
+                String nama = String.valueOf(rs.getArray("nama"));
+                String nomer = String.valueOf(rs.getArray("nomer"));    
+                
+                //string aray database memberw
+                
+                String tbData[] = {id, nama, nomer};
+                DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
+                
+                tblModel.addRow(tbData);
+            }
+    }   catch (SQLException ex) {
+            Logger.getLogger(marketNew.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_tmblTampilActionPerformed
 
     private void tmblTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tmblTambahActionPerformed
-        // TODO add your handling code here:
+ String nama = inputUsername.getText();
+ String nomer = inputNoTelp.getText();
+   
+    try(
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/databasekasir", "root", "")){
+        stat = connection.createStatement();
+        String sql = "INSERT INTO member (nama,nomer) VALUES (?, ?)";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        
+        preparedStatement.setString(1, nama);
+        preparedStatement.setString(2, nomer);
+        
+        
+        int rowsAffected = preparedStatement.executeUpdate();
+        
+        if (rowsAffected > 0) {
+            JOptionPane.showMessageDialog(this, "Data berhasil ditambahkan");
+        } else {
+            JOptionPane.showMessageDialog(this, "Data gagal ditambahkan");
+        }
+
+        preparedStatement.close();
+        connection.close();
+        
+         
+    }catch(SQLException e){
+        System.out.println("" + e.getMessage());
+    }        // TODO add your handling code here:        // TODO add your handling code here:
     }//GEN-LAST:event_tmblTambahActionPerformed
 
     /**
