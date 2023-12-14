@@ -132,6 +132,9 @@ public class login extends javax.swing.JFrame {
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
                     JOptionPane.showMessageDialog(null, "Silahkan Masuk", "Masuk", JOptionPane.INFORMATION_MESSAGE);
+                    marketNew tambah = new marketNew();
+                    tambah.setVisible(true);
+                    this.dispose(); 
                 } else {
                     JOptionPane.showMessageDialog(null, "Username atau Password yang anda masukan salah", "Peringatan!", JOptionPane.INFORMATION_MESSAGE);
                 }
