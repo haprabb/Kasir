@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
@@ -69,9 +70,9 @@ public class marketNew extends javax.swing.JFrame {
         tmblTambah = new javax.swing.JButton();
         tmblTampil = new javax.swing.JButton();
         tmblHapus = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         tmblKeluar = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tblMember = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -272,12 +273,12 @@ public class marketNew extends javax.swing.JFrame {
                 .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE))
-                .addGap(18, 19, Short.MAX_VALUE)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60))
             .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCard1Layout.createSequentialGroup()
-                    .addContainerGap(339, Short.MAX_VALUE)
+                    .addContainerGap(337, Short.MAX_VALUE)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(60, 60, 60)))
         );
@@ -336,28 +337,42 @@ public class marketNew extends javax.swing.JFrame {
         });
 
         tmblHapus.setText("Hapus");
+        tmblHapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tmblHapusActionPerformed(evt);
+            }
+        });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tmblKeluar.setText("Keluar");
+
+        tblMember.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
                 {null, null, null},
                 {null, null, null},
                 {null, null, null},
                 {null, null, null}
             },
             new String [] {
-                "ID", "Username", "Nomer Telpon"
+                "ID", "Nama", "Nomer"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
-
-        tmblKeluar.setText("Keluar");
+        jScrollPane3.setViewportView(tblMember);
 
         javax.swing.GroupLayout pnlCard3Layout = new javax.swing.GroupLayout(pnlCard3);
         pnlCard3.setLayout(pnlCard3Layout);
         pnlCard3Layout.setHorizontalGroup(
             pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCard3Layout.createSequentialGroup()
-                .addGroup(pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(pnlCard3Layout.createSequentialGroup()
                             .addGap(185, 185, 185)
@@ -378,11 +393,8 @@ public class marketNew extends javax.swing.JFrame {
                                     .addGroup(pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(inputUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(inputNoTelp, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGap(0, 0, Short.MAX_VALUE)))
-                    .addGroup(pnlCard3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 599, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGap(0, 0, Short.MAX_VALUE))))
+                .addContainerGap(163, Short.MAX_VALUE))
         );
         pnlCard3Layout.setVerticalGroup(
             pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -401,9 +413,9 @@ public class marketNew extends javax.swing.JFrame {
                     .addComponent(tmblHapus)
                     .addComponent(tmblTambah)
                     .addComponent(tmblKeluar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pnlCards.add(pnlCard3, "pnlCard3");
@@ -451,23 +463,25 @@ public class marketNew extends javax.swing.JFrame {
     }//GEN-LAST:event_inputUsernameActionPerformed
 
     private void tmblTampilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tmblTampilActionPerformed
-    try(Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/databasekasir", "root", "")){
+    try(
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/databasekasir", "root", "")){
         Statement st = connection.createStatement();
         String query = "SELECT * FROM member";
-        ResultSet rs = st.executeQuery(query);
+        
+        
+        
+        PreparedStatement pst = connection.prepareStatement(query);
+        ResultSet rs = pst.executeQuery(query);
+        DefaultTableModel model = (DefaultTableModel)tblMember.getModel();
+        model.setRowCount(0);
+        while(rs.next()){
+            model.addRow(new String[]{rs.getString(1), rs.getString(2), rs.getString(3)});
             
-            while (rs.next()){
-                String id = String.valueOf(rs.getInt("id"));
-                String nama = String.valueOf(rs.getArray("nama"));
-                String nomer = String.valueOf(rs.getArray("nomer"));    
-                
-                //string aray database memberw
-                
-                String tbData[] = {id, nama, nomer};
-                DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
-                
-                tblModel.addRow(tbData);
-            }
+        }
+        
+            
+           
+            
     }   catch (SQLException ex) {
             Logger.getLogger(marketNew.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -511,6 +525,26 @@ public class marketNew extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void tmblHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tmblHapusActionPerformed
+      int row = tblMember.getSelectedRow();
+      String cell = tblMember.getModel().getValueAt(row, 0).toString();
+      String query = "DELETE FROM member where Id = " + cell;
+     try(
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/databasekasir", "root", "")){
+        Statement st = connection.createStatement();
+        PreparedStatement pst = connection.prepareStatement(query);
+        ResultSet rs = pst.executeQuery(query);
+        JOptionPane.showMessageDialog(null, "Data Berhasil dihapus");
+        
+        
+        
+    } catch (SQLException ex) {
+            Logger.getLogger(marketNew.class.getName()).log(Level.SEVERE, null, ex);
+        
+     }
+     
+    }//GEN-LAST:event_tmblHapusActionPerformed
 
     /**
      * @param args the command line arguments
@@ -562,10 +596,9 @@ public class marketNew extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
@@ -573,9 +606,18 @@ public class marketNew extends javax.swing.JFrame {
     private javax.swing.JPanel pnlCard2;
     private javax.swing.JPanel pnlCard3;
     private javax.swing.JPanel pnlCards;
+    private javax.swing.JTable tblMember;
     private javax.swing.JButton tmblHapus;
     private javax.swing.JButton tmblKeluar;
     private javax.swing.JButton tmblTambah;
     private javax.swing.JButton tmblTampil;
     // End of variables declaration//GEN-END:variables
+
+    private void loadTable() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void Update_table() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
