@@ -252,7 +252,7 @@ public class marketNew extends javax.swing.JFrame {
                 .addGroup(pnlCard1Layout.createSequentialGroup()
                     .addGap(76, 76, 76)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(438, Short.MAX_VALUE)))
+                    .addContainerGap(465, Short.MAX_VALUE)))
         );
         pnlCard1Layout.setVerticalGroup(
             pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -290,7 +290,7 @@ public class marketNew extends javax.swing.JFrame {
         pnlCard2.setLayout(pnlCard2Layout);
         pnlCard2Layout.setHorizontalGroup(
             pnlCard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 706, Short.MAX_VALUE)
+            .addGap(0, 776, Short.MAX_VALUE)
         );
         pnlCard2Layout.setVerticalGroup(
             pnlCard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
