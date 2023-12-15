@@ -53,15 +53,19 @@ public class marketNew extends javax.swing.JFrame {
         pnlCards = new javax.swing.JPanel();
         pnlCard1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        tblBarang1 = new javax.swing.JTable();
-        jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        inputJumlah1 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
         tblBarang2 = new javax.swing.JTable();
+        jLabel10 = new javax.swing.JLabel();
+        inputHarga1 = new javax.swing.JTextField();
+        jButton9 = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        inputHarga2 = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        inputHarga3 = new javax.swing.JTextField();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tblBarang3 = new javax.swing.JTable();
         pnlCard2 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         tblBarang = new javax.swing.JTable();
@@ -183,7 +187,7 @@ public class marketNew extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(0, 108, 103));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(242, 242, 242));
-        jButton1.setText("Beli Non-Member");
+        jButton1.setText("Non-Member");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -191,36 +195,10 @@ public class marketNew extends javax.swing.JFrame {
             }
         });
 
-        tblBarang1.setBackground(new java.awt.Color(0, 108, 103));
-        tblBarang1.setForeground(new java.awt.Color(242, 242, 242));
-        tblBarang1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "ID", "Nama barang", "Harga", "Jumlah", "Id Barang"
-            }
-        ));
-        jScrollPane5.setViewportView(tblBarang1);
-
-        jButton7.setBackground(new java.awt.Color(0, 108, 103));
-        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setText("Tampil");
-        jButton7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-
         jButton8.setBackground(new java.awt.Color(0, 108, 103));
         jButton8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setText("Pilih");
+        jButton8.setText("Tambah");
         jButton8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -231,7 +209,7 @@ public class marketNew extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(0, 108, 103));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(242, 242, 242));
-        jButton2.setText("Beli Member");
+        jButton2.setText("Member");
         jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -239,86 +217,145 @@ public class marketNew extends javax.swing.JFrame {
             }
         });
 
-        inputJumlah1.setBackground(new java.awt.Color(0, 108, 103));
-        inputJumlah1.setForeground(new java.awt.Color(242, 242, 242));
-
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(242, 242, 242));
-        jLabel9.setText("Jumlah");
-
         tblBarang2.setBackground(new java.awt.Color(0, 108, 103));
         tblBarang2.setForeground(new java.awt.Color(242, 242, 242));
         tblBarang2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nama barang", "Harga", "Jumlah", "Id Barang"
+                "No Transaksi", "Id Barang", "Nama barang", "Harga", "Jumlah", "Total"
             }
         ));
         jScrollPane6.setViewportView(tblBarang2);
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel10.setText("Harga");
+
+        inputHarga1.setBackground(new java.awt.Color(0, 108, 103));
+        inputHarga1.setForeground(new java.awt.Color(242, 242, 242));
+
+        jButton9.setBackground(new java.awt.Color(0, 108, 103));
+        jButton9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(255, 255, 255));
+        jButton9.setText("Beli");
+        jButton9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel14.setText("Bayar");
+
+        inputHarga2.setBackground(new java.awt.Color(0, 108, 103));
+        inputHarga2.setForeground(new java.awt.Color(242, 242, 242));
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel15.setText("Kembali");
+
+        inputHarga3.setBackground(new java.awt.Color(0, 108, 103));
+        inputHarga3.setForeground(new java.awt.Color(242, 242, 242));
+
+        tblBarang3.setBackground(new java.awt.Color(0, 108, 103));
+        tblBarang3.setForeground(new java.awt.Color(242, 242, 242));
+        tblBarang3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "No Transaksi", "Id Barang", "Nama barang", "Harga", "Jumlah", "Total"
+            }
+        ));
+        jScrollPane7.setViewportView(tblBarang3);
 
         javax.swing.GroupLayout pnlCard1Layout = new javax.swing.GroupLayout(pnlCard1);
         pnlCard1.setLayout(pnlCard1Layout);
         pnlCard1Layout.setHorizontalGroup(
             pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCard1Layout.createSequentialGroup()
-                .addGap(109, 109, 109)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(117, 117, 117))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCard1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlCard1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCard1Layout.createSequentialGroup()
+                                .addComponent(inputHarga1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCard1Layout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addGap(28, 28, 28)))
+                        .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(inputHarga2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCard1Layout.createSequentialGroup()
+                                .addComponent(jLabel14)
+                                .addGap(22, 22, 22)))
+                        .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCard1Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(inputHarga3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCard1Layout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addGap(9, 9, 9)))
+                        .addGap(19, 19, 19))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCard1Layout.createSequentialGroup()
-                        .addContainerGap(81, Short.MAX_VALUE)
-                        .addComponent(jLabel9)
-                        .addGap(62, 62, 62)
-                        .addComponent(inputJumlah1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(166, 166, 166))
-                    .addGroup(pnlCard1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(74, 74, 74))
+                        .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(60, 60, 60))))
         );
         pnlCard1Layout.setVerticalGroup(
             pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCard1Layout.createSequentialGroup()
                 .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlCard1Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jButton7))
-                    .addGroup(pnlCard1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputJumlah1))
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlCard1Layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addComponent(jButton8)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCard1Layout.createSequentialGroup()
+                        .addComponent(jButton9)
+                        .addGap(62, 62, 62)))
                 .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlCard1Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCard1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton8)
-                        .addGap(87, 87, 87)))
-                .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addGap(89, 89, 89))
+                        .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton2)
+                            .addComponent(jButton1))
+                        .addGap(48, 48, 48))
+                    .addGroup(pnlCard1Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel15))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(inputHarga1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inputHarga2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inputHarga3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(27, Short.MAX_VALUE))))
         );
 
         pnlCards.add(pnlCard1, "pnlCard1");
@@ -1028,35 +1065,6 @@ public class marketNew extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_tmblHapus1ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        try (
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/databasekasir", "root", "")) {
-        Statement st = connection.createStatement();
-        String query = "SELECT * FROM barang";
-
-        PreparedStatement pst = connection.prepareStatement(query);
-        ResultSet rs = pst.executeQuery(query);
-        DefaultTableModel model = (DefaultTableModel) tblBarang1.getModel();
-        model.setRowCount(0);
-        while (rs.next()) {
-            // Retrieve the first column as int (assuming it's an integer column)
-            int id = rs.getInt(1);
-            
-            // Retrieve other columns as strings
-            String column2 = rs.getString(2);
-            String column3 = rs.getString(3);
-            String column4 = rs.getString(4);
-            String column5 = rs.getString(5);
-
-            // Add the row to the table model
-            model.addRow(new Object[]{id, column2, column3, column4, column5});
-        }
-
-    } catch (SQLException ex) {
-        Logger.getLogger(marketNew.class.getName()).log(Level.SEVERE, null, ex);
-    }
-    }//GEN-LAST:event_jButton7ActionPerformed
-
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         
     }//GEN-LAST:event_jButton8ActionPerformed
@@ -1064,6 +1072,10 @@ public class marketNew extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1107,9 +1119,11 @@ public class marketNew extends javax.swing.JFrame {
     private javax.swing.JButton Product;
     private javax.swing.JTextField inputBarang;
     private javax.swing.JTextField inputHarga;
+    private javax.swing.JTextField inputHarga1;
+    private javax.swing.JTextField inputHarga2;
+    private javax.swing.JTextField inputHarga3;
     private javax.swing.JTextField inputID;
     private javax.swing.JTextField inputJumlah;
-    private javax.swing.JTextField inputJumlah1;
     private javax.swing.JTextField inputNoTelp;
     private javax.swing.JTextField inputUsername;
     private javax.swing.JButton jButton1;
@@ -1117,28 +1131,30 @@ public class marketNew extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JPanel pnlCard1;
     private javax.swing.JPanel pnlCard2;
     private javax.swing.JPanel pnlCard3;
     private javax.swing.JPanel pnlCards;
     private javax.swing.JTable tblBarang;
-    private javax.swing.JTable tblBarang1;
     private javax.swing.JTable tblBarang2;
+    private javax.swing.JTable tblBarang3;
     private javax.swing.JTable tblMember;
     private javax.swing.JButton tmblHapus;
     private javax.swing.JButton tmblHapus1;
