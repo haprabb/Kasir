@@ -12,6 +12,8 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
@@ -50,6 +52,7 @@ public class marketNew extends javax.swing.JFrame {
         Product = new javax.swing.JButton();
         Member = new javax.swing.JButton();
         Market = new javax.swing.JButton();
+        Member1 = new javax.swing.JButton();
         pnlCards = new javax.swing.JPanel();
         pnlCard1 = new javax.swing.JPanel();
         buttonNotMember = new javax.swing.JButton();
@@ -69,6 +72,8 @@ public class marketNew extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         inputNamaKasir = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
+        inputMember3 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
         pnlCard2 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         tblBarang = new javax.swing.JTable();
@@ -95,6 +100,9 @@ public class marketNew extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         tblMember = new javax.swing.JTable();
         tmblHapus1 = new javax.swing.JButton();
+        pnlCard4 = new javax.swing.JPanel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        tblHistory = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -154,13 +162,26 @@ public class marketNew extends javax.swing.JFrame {
             }
         });
 
+        Member1.setBackground(new java.awt.Color(0, 108, 103));
+        Member1.setFont(new java.awt.Font("Segoe UI", 1, 17)); // NOI18N
+        Member1.setForeground(new java.awt.Color(242, 242, 242));
+        Member1.setText("History");
+        Member1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Member1.setPreferredSize(new java.awt.Dimension(100, 50));
+        Member1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Member1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Member1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Logout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Member, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Product, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -170,15 +191,17 @@ public class marketNew extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(42, Short.MAX_VALUE)
+                .addGap(30, 30, 30)
                 .addComponent(Market, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(Product, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(Member, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(Member1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(Logout, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addGap(31, 31, 31))
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
@@ -287,6 +310,13 @@ public class marketNew extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(242, 242, 242));
         jLabel12.setText("Nama Kasir");
 
+        inputMember3.setBackground(new java.awt.Color(0, 108, 103));
+        inputMember3.setForeground(new java.awt.Color(242, 242, 242));
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel13.setText("No Member");
+
         javax.swing.GroupLayout pnlCard1Layout = new javax.swing.GroupLayout(pnlCard1);
         pnlCard1.setLayout(pnlCard1Layout);
         pnlCard1Layout.setHorizontalGroup(
@@ -295,35 +325,40 @@ public class marketNew extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlCard1Layout.createSequentialGroup()
-                        .addComponent(buttonNotMember, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(buttonMember, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(10, 10, 10)
+                        .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(buttonNotMember, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonMember, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
                         .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCard1Layout.createSequentialGroup()
-                                .addComponent(inputHarga1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                .addComponent(inputMember3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(inputHarga1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCard1Layout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addGap(56, 56, 56)
                                 .addComponent(jLabel10)
-                                .addGap(28, 28, 28)))
-                        .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(inputBayar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCard1Layout.createSequentialGroup()
-                                .addComponent(jLabel14)
-                                .addGap(22, 22, 22)))
+                                .addGap(20, 20, 20)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlCard1Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(inputKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(inputBayar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCard1Layout.createSequentialGroup()
+                                .addComponent(jLabel14)
+                                .addGap(34, 34, 34)))
+                        .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(inputKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCard1Layout.createSequentialGroup()
                                 .addComponent(jLabel15)
                                 .addGap(9, 9, 9)))
-                        .addGap(19, 19, 19))
+                        .addGap(7, 7, 7))
                     .addGroup(pnlCard1Layout.createSequentialGroup()
                         .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCard1Layout.createSequentialGroup()
                                 .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -361,19 +396,30 @@ public class marketNew extends javax.swing.JFrame {
                         .addGap(46, 46, 46)
                         .addComponent(jButton9))
                     .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel14)
-                    .addComponent(jLabel15))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(inputHarga1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputBayar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonNotMember)
-                    .addComponent(buttonMember))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlCard1Layout.createSequentialGroup()
+                        .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCard1Layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel14)
+                                    .addComponent(jLabel15)))
+                            .addGroup(pnlCard1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel13)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlCard1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(inputHarga1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inputBayar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inputKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inputMember3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlCard1Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(buttonNotMember)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(buttonMember)))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
 
         pnlCards.add(pnlCard1, "pnlCard1");
@@ -476,7 +522,7 @@ public class marketNew extends javax.swing.JFrame {
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47)
                 .addGroup(pnlCard2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
                     .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(tmblTampil1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -617,7 +663,15 @@ public class marketNew extends javax.swing.JFrame {
             new String [] {
                 "ID", "Nama", "Nomer"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane3.setViewportView(tblMember);
 
         tmblHapus1.setBackground(new java.awt.Color(0, 108, 103));
@@ -643,7 +697,7 @@ public class marketNew extends javax.swing.JFrame {
                 .addGroup(pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
                 .addGroup(pnlCard3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(inputUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(inputNoTelp, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -682,6 +736,39 @@ public class marketNew extends javax.swing.JFrame {
         );
 
         pnlCards.add(pnlCard3, "pnlCard3");
+
+        pnlCard4.setBackground(new java.awt.Color(0, 56, 68));
+
+        tblHistory.setBackground(new java.awt.Color(0, 108, 103));
+        tblHistory.setForeground(new java.awt.Color(242, 242, 242));
+        tblHistory.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Nama Kasir", "No Member", "Nama Barang", "Jumlah", "Harga", "Bayar", "Kembali", "Tanggal"
+            }
+        ));
+        jScrollPane8.setViewportView(tblHistory);
+
+        javax.swing.GroupLayout pnlCard4Layout = new javax.swing.GroupLayout(pnlCard4);
+        pnlCard4.setLayout(pnlCard4Layout);
+        pnlCard4Layout.setHorizontalGroup(
+            pnlCard4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCard4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 796, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        pnlCard4Layout.setVerticalGroup(
+            pnlCard4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCard4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        pnlCards.add(pnlCard4, "pnlCard4");
 
         jSplitPane1.setRightComponent(pnlCards);
 
@@ -1158,7 +1245,55 @@ public class marketNew extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonMemberActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
+        String namaKasir = inputNamaKasir.getText();
+        String member = inputMember3.getText();
+        String harga1 = inputHarga1.getText();
+        String bayar = inputBayar.getText();
+        String kembali = inputKembali.getText();
+
+        // Getting data from JTable
+        StringBuilder barangColumn3 = new StringBuilder();
+        StringBuilder barangColumn5 = new StringBuilder();
+
+        for (int i = 0; i < tblBarang3.getRowCount(); i++) {
+            // Assuming 1-indexed columns in your JTable
+            barangColumn3.append(tblBarang3.getValueAt(i, 2)).append(", ");
+            barangColumn5.append(tblBarang3.getValueAt(i, 4)).append(", ");
+        }
+
+        // Removing the trailing comma and space
+        String column3Data = barangColumn3.length() > 2 ? barangColumn3.substring(0, barangColumn3.length() - 2) : "";
+        String column5Data = barangColumn5.length() > 2 ? barangColumn5.substring(0, barangColumn5.length() - 2) : "";
+
+        // Getting the current date and time
+        Date now = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String currentDate = dateFormat.format(now);
+
+        // JDBC Connection
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/databasekasir", "root", "")) {
+            // SQL Query
+            String sql = "INSERT INTO transaksi (namaKasir, member, namaBarang, jumlah, harga, bayar, kembali, tanggal) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+
+            try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                preparedStatement.setString(1, namaKasir);
+                preparedStatement.setString(2, member);
+                preparedStatement.setString(3, column3Data);
+                preparedStatement.setString(4, column5Data);
+                preparedStatement.setString(5, harga1);
+                preparedStatement.setString(6, bayar);
+                preparedStatement.setString(7, kembali);
+                preparedStatement.setString(8, currentDate);
+
+                // Execute the query
+                preparedStatement.executeUpdate();
+                JOptionPane.showMessageDialog(this, "Transaksi Berhasil", "Berhasil", JOptionPane.INFORMATION_MESSAGE);
+
+                // Add any additional logic here after the data is inserted
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // Handle the exception appropriately in your actual code
+        }
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void tblBarang2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBarang2MouseClicked
@@ -1185,6 +1320,39 @@ public class marketNew extends javax.swing.JFrame {
     }
     return total;
     }//GEN-LAST:event_tblBarang2MouseClicked
+
+    private void Member1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Member1ActionPerformed
+        cardLayout.show(pnlCards, "pnlCard4");
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/databasekasir", "root", "")) {
+            // SQL Query to retrieve data from the "transaksi" table
+            String sql = "SELECT * FROM transaksi";
+
+            try (PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                 ResultSet resultSet = preparedStatement.executeQuery()) {
+
+                // Populate the JTable tblHistory with the retrieved data
+                DefaultTableModel model = (DefaultTableModel) tblHistory.getModel();
+                model.setRowCount(0); // Clear existing rows
+
+                while (resultSet.next()) {
+                    int ID = resultSet.getInt("id");
+                    String namaKasir = resultSet.getString("namaKasir");
+                    String member = resultSet.getString("member");
+                    String namaBarang = resultSet.getString("namaBarang");
+                    String jumlah = resultSet.getString("jumlah");
+                    String harga = resultSet.getString("harga");
+                    String bayar = resultSet.getString("bayar");
+                    String kembali = resultSet.getString("kembali");
+                    String tanggal = resultSet.getString("tanggal");
+
+                    // Add a new row to the table
+                    model.addRow(new Object[]{ID, namaKasir, member, namaBarang, jumlah, harga, bayar, kembali, tanggal});
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // Handle the exception appropriately in your actual code
+        }
+    }//GEN-LAST:event_Member1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1225,6 +1393,7 @@ public class marketNew extends javax.swing.JFrame {
     private javax.swing.JButton Logout;
     private javax.swing.JButton Market;
     private javax.swing.JButton Member;
+    private javax.swing.JButton Member1;
     private javax.swing.JButton Product;
     private javax.swing.JButton buttonMember;
     private javax.swing.JButton buttonNotMember;
@@ -1236,6 +1405,7 @@ public class marketNew extends javax.swing.JFrame {
     private javax.swing.JTextField inputJumlah;
     private javax.swing.JTextField inputJumlah3;
     private javax.swing.JTextField inputKembali;
+    private javax.swing.JTextField inputMember3;
     private javax.swing.JTextField inputNamaKasir;
     private javax.swing.JTextField inputNoTelp;
     private javax.swing.JTextField inputUsername;
@@ -1247,6 +1417,7 @@ public class marketNew extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
@@ -1259,14 +1430,17 @@ public class marketNew extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JPanel pnlCard1;
     private javax.swing.JPanel pnlCard2;
     private javax.swing.JPanel pnlCard3;
+    private javax.swing.JPanel pnlCard4;
     private javax.swing.JPanel pnlCards;
     private javax.swing.JTable tblBarang;
     private javax.swing.JTable tblBarang2;
     private javax.swing.JTable tblBarang3;
+    private javax.swing.JTable tblHistory;
     private javax.swing.JTable tblMember;
     private javax.swing.JButton tmblHapus;
     private javax.swing.JButton tmblHapus1;
