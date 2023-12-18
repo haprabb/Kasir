@@ -256,6 +256,7 @@ public class marketNew extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(242, 242, 242));
         jLabel10.setText("Harga");
 
+        inputHarga1.setEditable(false);
         inputHarga1.setBackground(new java.awt.Color(0, 108, 103));
         inputHarga1.setForeground(new java.awt.Color(242, 242, 242));
 
@@ -281,6 +282,7 @@ public class marketNew extends javax.swing.JFrame {
         jLabel15.setForeground(new java.awt.Color(242, 242, 242));
         jLabel15.setText("Kembali");
 
+        inputKembali.setEditable(false);
         inputKembali.setBackground(new java.awt.Color(0, 108, 103));
         inputKembali.setForeground(new java.awt.Color(242, 242, 242));
 
@@ -312,6 +314,11 @@ public class marketNew extends javax.swing.JFrame {
 
         inputMember3.setBackground(new java.awt.Color(0, 108, 103));
         inputMember3.setForeground(new java.awt.Color(242, 242, 242));
+        inputMember3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputMember3ActionPerformed(evt);
+            }
+        });
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(242, 242, 242));
@@ -1353,6 +1360,10 @@ public class marketNew extends javax.swing.JFrame {
             e.printStackTrace(); // Handle the exception appropriately in your actual code
         }
     }//GEN-LAST:event_Member1ActionPerformed
+
+    private void inputMember3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputMember3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputMember3ActionPerformed
 
     /**
      * @param args the command line arguments
