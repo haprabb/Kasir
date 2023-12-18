@@ -115,7 +115,7 @@ public class marketNew extends javax.swing.JFrame {
         Logout.setBackground(new java.awt.Color(0, 108, 103));
         Logout.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Logout.setForeground(new java.awt.Color(242, 242, 242));
-        Logout.setText("Logout");
+        Logout.setText("Keluar");
         Logout.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Logout.setPreferredSize(new java.awt.Dimension(100, 50));
         Logout.addActionListener(new java.awt.event.ActionListener() {
